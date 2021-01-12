@@ -1,0 +1,237 @@
+2021-01-12 15:19:07,076 [main] INFO com.tc.server.TCServerMain - Terracotta 5.6.5, as of 2019-09-04 at 12:21:32 PDT (Revision 16f7e6193f56415c0d3795afaed3c2b959a534cc from UNKNOWN)
+2021-01-12 15:19:07,087 [main] INFO com.tc.server.TCServerMain - PID is 26014
+2021-01-12 15:19:07,091 [main] INFO com.tc.properties.TCPropertiesImpl - Loading default properties from tc.properties
+2021-01-12 15:19:07,093 [main] INFO com.tc.properties.TCPropertiesImpl - The property "l2.dump.on.exception.timeout" was read before initialization completed. "l2.dump.on.exception.timeout" = 30
+2021-01-12 15:19:07,097 [main] INFO com.tc.classloader.ServiceLocator - Entity/Service apis will be loaded from /Volumes/Devs/dev/limber-ehcache/server/plugins/api
+2021-01-12 15:19:07,097 [main] INFO com.tc.classloader.ServiceLocator - Entity/Service implementations will be loaded from /Volumes/Devs/dev/limber-ehcache/server/plugins/lib
+2021-01-12 15:19:07,164 [main] INFO com.tc.config.DefaultConfigurationProvider - Attempting to load configuration from the file at '/Volumes/Devs/dev/limber-ehcache/server/conf/tc-config.xml'...
+2021-01-12 15:19:07,389 [main] INFO org.terracotta.lease.service.config.LeaseConfigurationParser - Found lease length XML text: 60
+2021-01-12 15:19:07,390 [main] INFO org.terracotta.lease.service.config.LeaseConfigurationParser - Found lease length time unit: seconds
+2021-01-12 15:19:07,393 [main] INFO com.tc.config.DefaultConfigurationProvider - Successfully loaded configuration from the file at '/Volumes/Devs/dev/limber-ehcache/server/conf/tc-config.xml'
+2021-01-12 15:19:07,410 [main] INFO com.tc.config.DefaultConfigurationProvider - The configuration specified by the configuration file at '/Volumes/Devs/dev/limber-ehcache/server/conf/tc-config.xml': 
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tc-config xmlns="http://www.terracotta.org/config">
+    <plugins>
+        <config>
+            <ohr:offheap-resources xmlns:ohr="http://www.terracotta.org/config/offheap-resource" xmlns:lease="http://www.terracotta.org/service/lease">
+                <ohr:resource name="primary-server-resource" unit="MB">128</ohr:resource>
+                <ohr:resource name="secondary-server-resource" unit="MB">96</ohr:resource>
+            </ohr:offheap-resources>
+        </config>
+        <service>
+            <lease:connection-leasing xmlns:ohr="http://www.terracotta.org/config/offheap-resource" xmlns:lease="http://www.terracotta.org/service/lease">
+                <lease:lease-length unit="seconds">60</lease:lease-length>
+            </lease:connection-leasing>
+        </service>
+    </plugins>
+    <tc-properties/>
+    <failover-priority>
+        <availability></availability>
+    </failover-priority>
+    <servers>
+        <server host="192.168.1.11" name="192.168.1.11:9410" bind="0.0.0.0">
+            <logs>/Volumes/Devs/dev/limber-ehcache/server/conf/logs/MBP-de-Elinam-9410</logs>
+            <tsa-port bind="0.0.0.0">9410</tsa-port>
+            <tsa-group-port bind="0.0.0.0">9430</tsa-group-port>
+        </server>
+        <client-reconnect-window>120</client-reconnect-window>
+    </servers>
+</tc-config>
+
+2021-01-12 15:19:07,413 [main] INFO com.tc.l2.logging.TCLogbackLogging - Log file: /Volumes/Devs/dev/limber-ehcache/server/conf/logs/MBP-de-Elinam-9410/terracotta.server.log
+2021-01-12 15:19:07,421 [main] INFO com.tc.l2.logging.TCLogbackLogging - All Java System Properties for this Terracotta instance:
+========================================================================
+JVM arguments: [-XX:MaxDirectMemorySize=1048576g, -Xms256m, -Xmx2049m, -XX:+HeapDumpOnOutOfMemoryError, -Dtc.install-root=/Volumes/Devs/dev/limber-ehcache/server, -DapplyEvolutions.analytics=false, -DapplyDownEvolutions.analytics=false, -DapplyEvolutions.events=false, -DapplyDownEvolutions.events=false]
+applyDownEvolutions.analytics : false
+applyDownEvolutions.events    : false
+applyEvolutions.analytics     : false
+applyEvolutions.events        : false
+awt.toolkit                   : sun.lwawt.macosx.LWCToolkit
+file.encoding                 : UTF-8
+file.encoding.pkg             : sun.io
+file.separator                : /
+ftp.nonProxyHosts             : local|*.local|169.254/16|*.169.254/16
+gopherProxySet                : false
+http.nonProxyHosts            : local|*.local|169.254/16|*.169.254/16
+java.awt.graphicsenv          : sun.awt.CGraphicsEnvironment
+java.awt.printerjob           : sun.lwawt.macosx.CPrinterJob
+java.class.path               : /Volumes/Devs/dev/limber-ehcache/server/lib/tc.jar::/Volumes/Devs/dev/limber-ehcache/server/plugins/lib/client-message-tracker-5.7.3.jar:/Volumes/Devs/dev/limber-ehcache/server/plugins/lib/ehcache-api-3.8.1.jar:/Volumes/Devs/dev/limber-ehcache/server/plugins/lib/ehcache-common-3.8.1.jar:/Volumes/Devs/dev/limber-ehcache/server/plugins/lib/ehcache-server-3.8.1.jar:/Volumes/Devs/dev/limber-ehcache/server/plugins/lib/lease-common-5.7.3.jar:/Volumes/Devs/dev/limber-ehcache/server/plugins/lib/lease-entity-api-5.7.3.jar:/Volumes/Devs/dev/limber-ehcache/server/plugins/lib/lease-entity-common-5.7.3.jar:/Volumes/Devs/dev/limber-ehcache/server/plugins/lib/lease-entity-server-5.7.3.jar:/Volumes/Devs/dev/limber-ehcache/server/plugins/lib/mnm-common-5.7.3.jar:/Volumes/Devs/dev/limber-ehcache/server/plugins/lib/monitoring-service-api-5.7.3.jar:/Volumes/Devs/dev/limber-ehcache/server/plugins/lib/monitoring-support-1.6.1.jar:/Volumes/Devs/dev/limber-ehcache/server/plugins/lib/offheap-resource-5.7.3.jar:/Volumes/Devs/dev/limber-ehcache/server/plugins/lib/offheap-store-2.4.3.jar:/Volumes/Devs/dev/limber-ehcache/server/plugins/lib/runnel-5.7.3.jar:/Volumes/Devs/dev/limber-ehcache/server/plugins/lib/slf4j-api-1.7.25.jar:/Volumes/Devs/dev/limber-ehcache/server/plugins/lib/standard-cluster-services-1.6.1.jar:/Volumes/Devs/dev/limber-ehcache/server/plugins/lib/statistics-2.1.jar:/Volumes/Devs/dev/limber-ehcache/server/lib/slf4j-api-1.7.25.jar:/Volumes/Devs/dev/limber-ehcache/server/lib
+java.class.version            : 52.0
+java.endorsed.dirs            : /Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/lib/endorsed
+java.ext.dirs                 : /Users/elinam/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+java.home                     : /Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre
+java.io.tmpdir                : /var/folders/7k/8wr934wd0mn0pcryfw9lkmgr0000gn/T/
+java.library.path             : /Users/elinam/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+java.runtime.name             : Java(TM) SE Runtime Environment
+java.runtime.version          : 1.8.0_202-b08
+java.specification.name       : Java Platform API Specification
+java.specification.vendor     : Oracle Corporation
+java.specification.version    : 1.8
+java.vendor                   : Oracle Corporation
+java.vendor.url               : http://java.oracle.com/
+java.vendor.url.bug           : http://bugreport.sun.com/bugreport/
+java.version                  : 1.8.0_202
+java.vm.info                  : mixed mode
+java.vm.name                  : Java HotSpot(TM) 64-Bit Server VM
+java.vm.specification.name    : Java Virtual Machine Specification
+java.vm.specification.vendor  : Oracle Corporation
+java.vm.specification.version : 1.8
+java.vm.vendor                : Oracle Corporation
+java.vm.version               : 25.202-b08
+line.separator                : 
+
+os.arch                       : x86_64
+os.name                       : Mac OS X
+os.version                    : 10.16
+path.separator                : :
+socksNonProxyHosts            : local|*.local|169.254/16|*.169.254/16
+sun.arch.data.model           : 64
+sun.boot.class.path           : /Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/classes
+sun.boot.library.path         : /Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/lib
+sun.cpu.endian                : little
+sun.cpu.isalist               : 
+sun.io.unicode.encoding       : UnicodeBig
+sun.java.command              : com.tc.server.TCServerMain -f server/conf/tc-config.xml
+sun.java.launcher             : SUN_STANDARD
+sun.jnu.encoding              : UTF-8
+sun.management.compiler       : HotSpot 64-Bit Tiered Compilers
+sun.os.patch.level            : unknown
+tc.install-root               : /Volumes/Devs/dev/limber-ehcache/server
+user.country                  : FR
+user.dir                      : /Volumes/Devs/dev/limber-ehcache
+user.home                     : /Users/elinam
+user.language                 : fr
+user.name                     : elinam
+user.timezone                 : Europe/Paris
+========================================================================
+2021-01-12 15:19:07,426 [main] INFO org.terracotta.console - Available Max Runtime Memory: 1822MB
+2021-01-12 15:19:07,496 [main] INFO com.tc.objectserver.impl.DistributedObjectServer - Creating server nodeID: NodeID[192.168.1.11:9410]
+2021-01-12 15:19:07,503 [main] INFO org.terracotta.lease.service.LeaseServiceProvider - Initializing LeaseServiceProvider
+2021-01-12 15:19:07,503 [main] INFO org.terracotta.lease.service.LeaseServiceProvider - Using lease length of 60000ms
+2021-01-12 15:19:07,508 [main] INFO org.terracotta.lease.service.LeaseServiceProvider - LeaseServiceProvider initialized
+2021-01-12 15:19:07,509 [main] INFO com.tc.services.TerracottaServiceProviderRegistryImpl - Initializing org.terracotta.lease.service.LeaseServiceProvider@32910148
+2021-01-12 15:19:07,515 [main] INFO com.tc.services.TerracottaServiceProviderRegistryImpl - Initializing org.terracotta.client.message.tracker.OOOMessageHandlerProvider@4a668b6e
+2021-01-12 15:19:07,516 [main] INFO com.tc.services.TerracottaServiceProviderRegistryImpl - Initializing org.ehcache.clustered.server.state.EhcacheStateServiceProvider@6f27a732
+2021-01-12 15:19:07,517 [main] INFO com.tc.services.TerracottaServiceProviderRegistryImpl - Registering implementation-provided service com.tc.services.PlatformServiceProvider@2525ff7e
+2021-01-12 15:19:07,517 [main] INFO com.tc.services.TerracottaServiceProviderRegistryImpl - Registering implementation-provided service com.tc.services.EntityMessengerProvider@776b83cc
+2021-01-12 15:19:07,517 [main] INFO com.tc.services.TerracottaServiceProviderRegistryImpl - Initializing com.tc.objectserver.persistence.NullPlatformStorageServiceProvider@5939a379
+2021-01-12 15:19:07,519 [main] INFO com.tc.services.TerracottaServiceProviderRegistryImpl - Registering implementation-provided service com.tc.services.LocalMonitoringProducer@482bce4f
+2021-01-12 15:19:07,532 [main] INFO com.tc.net.core.TCWorkerCommManager - Creating 4 worker comm threads for L2_L1
+2021-01-12 15:19:07,581 [main] INFO com.tc.services.TerracottaServiceProviderRegistryImpl - Registering implementation-provided service com.tc.services.CommunicatorService@7188af83
+2021-01-12 15:19:07,605 [main] INFO com.tc.objectserver.impl.DistributedObjectServer - This L2 Node ID = NodeID[192.168.1.11:9410]
+2021-01-12 15:19:07,605 [main] INFO com.tc.l2.state.StateManagerImpl - Starting election initial state:State[ START-STATE ]
+2021-01-12 15:19:07,614 [WorkerThread(l2_election_handler_stage, 0)] INFO com.tc.l2.state.ElectionManagerImpl - Election Started : Enrollment [ NodeID[192.168.1.11:9410], isNew = true, weights = 0,0,0,0,0,51,561760497123507206,0 ]
+2021-01-12 15:19:07,615 [WorkerThread(l2_election_handler_stage, 0)] INFO com.tc.l2.state.ElectionManagerImpl - Election took 0 sec. ending in State[ Election-In-Progress ]
+2021-01-12 15:19:07,615 [WorkerThread(l2_election_handler_stage, 0)] INFO com.tc.l2.state.ElectionManagerImpl - Election Complete : [Enrollment [ NodeID[192.168.1.11:9410], isNew = true, weights = 0,0,0,0,0,51,561760497123507206,0 ]] : State[ Election-Complete ]
+2021-01-12 15:19:07,616 [WorkerThread(l2_election_handler_stage, 0)] INFO com.tc.l2.state.ElectionManagerImpl - Declared as Winner: Winner is : Enrollment [ NodeID[192.168.1.11:9410], isNew = true, weights = 0,0,0,0,0,51,561760497123507206,0 ]
+2021-01-12 15:19:07,644 [main] INFO com.tc.server.TCServer - Server started as 192.168.1.11:9410
+2021-01-12 15:19:07,677 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[-1]:ClientInstanceID(0) Invoking lifecycle CREATE_ENTITY on EntityID{className='org.terracotta.lease.LeaseAcquirer', entityName='SystemLeaseAcquirer'}:FetchID=[1]
+2021-01-12 15:19:07,680 [WorkerThread(request_processor_stage, 3, 3)] INFO org.terracotta.lease.service.LeaseServiceProvider - Creating LeaseService
+2021-01-12 15:19:07,683 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle CREATE_ENTITY on EntityID{className='org.terracotta.lease.LeaseAcquirer', entityName='SystemLeaseAcquirer'}:FetchID=[1]
+2021-01-12 15:19:07,685 [WorkerThread(l2_state_change_stage, 0)] INFO com.tc.l2.ha.StripeIDStateManagerImpl - Persisting StripeID - StripeID[63250771701840b2b978217dc08b723d]
+2021-01-12 15:19:07,688 [WorkerThread(l2_state_change_stage, 0)] INFO org.terracotta.console - Terracotta Server instance has started up as ACTIVE node on 0.0.0.0:9410 successfully, and is now ready for work.
+2021-01-12 15:19:07,688 [WorkerThread(l2_state_change_stage, 0)] INFO org.terracotta.console - Moved to State[ ACTIVE-COORDINATOR ]
+2021-01-12 15:19:30,450 [WorkerThread(client_handshake_stage, 0)] INFO com.tc.objectserver.handshakemanager.ServerClientHandshakeManager - Handling client handshake for ClientID[10]
+2021-01-12 15:19:30,450 [WorkerThread(client_handshake_stage, 0)] INFO com.tc.objectserver.handshakemanager.ServerClientHandshakeManager - confirming client handshake for STARTED 10 ClientID[10]
+2021-01-12 15:19:30,450 [WorkerThread(client_handshake_stage, 0)] INFO com.tc.objectserver.handshakemanager.ServerClientHandshakeManager - Sending handshake acknowledgement to ClientID[10]
+2021-01-12 15:19:30,489 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[10]:ClientInstanceID(1) Invoking lifecycle FETCH_ENTITY on EntityID{className='org.terracotta.lease.LeaseAcquirer', entityName='SystemLeaseAcquirer'}:FetchID=[1]
+2021-01-12 15:19:30,490 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle FETCH_ENTITY on EntityID{className='org.terracotta.lease.LeaseAcquirer', entityName='SystemLeaseAcquirer'}:FetchID=[1]
+2021-01-12 15:19:30,543 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[10]:ClientInstanceID(0) Invoking lifecycle CREATE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[2]
+2021-01-12 15:19:30,598 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle CREATE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[2]
+2021-01-12 15:19:30,604 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[10]:ClientInstanceID(2) Invoking lifecycle FETCH_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[2]
+2021-01-12 15:19:30,604 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle FETCH_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[2]
+2021-01-12 15:19:30,646 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[10]:ClientInstanceID(0) Invoking lifecycle CREATE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:19:30,666 [WorkerThread(request_processor_stage, 3, 3)] INFO org.ehcache.clustered.server.EhcacheStateServiceImpl - Configuring server-side cluster tier manager
+2021-01-12 15:19:30,672 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle CREATE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:19:30,708 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[10]:ClientInstanceID(2) Invoking lifecycle RELEASE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[2]
+2021-01-12 15:19:30,709 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle RELEASE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[2]
+2021-01-12 15:19:30,714 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[10]:ClientInstanceID(0) Invoking lifecycle DESTROY_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[2]
+2021-01-12 15:19:30,719 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle DESTROY_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[2]
+2021-01-12 15:19:30,725 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[10]:ClientInstanceID(0) Invoking lifecycle CREATE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[4]
+2021-01-12 15:19:30,726 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle CREATE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[4]
+2021-01-12 15:19:30,731 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[10]:ClientInstanceID(3) Invoking lifecycle FETCH_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[4]
+2021-01-12 15:19:30,732 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle FETCH_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[4]
+2021-01-12 15:19:30,781 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[10]:ClientInstanceID(4) Invoking lifecycle FETCH_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:19:30,781 [WorkerThread(request_processor_stage, 3, 3)] INFO org.ehcache.clustered.server.ClusterTierManagerActiveEntity - Connecting ClientDescriptorImpl{nodeID=ClientID[10], entityDescriptor=ClientInstanceID(4)}
+2021-01-12 15:19:30,782 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle FETCH_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:19:31,148 [L2_L1:TCWorkerComm # 0_R] INFO com.tc.objectserver.handler.ClientChannelLifeCycleHandler - : Received transport disconnect.  Shutting down client ClientID[10]
+2021-01-12 15:19:31,152 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[10]:ClientInstanceID(0) Invoking lifecycle DISCONNECT_CLIENT on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[4]
+2021-01-12 15:19:31,155 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[10]:ClientInstanceID(0) Invoking lifecycle DISCONNECT_CLIENT on EntityID{className='org.terracotta.lease.LeaseAcquirer', entityName='SystemLeaseAcquirer'}:FetchID=[1]
+2021-01-12 15:19:31,155 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[10]:ClientInstanceID(0) Invoking lifecycle DISCONNECT_CLIENT on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:19:31,157 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[10]:ClientInstanceID(3) Invoking lifecycle RELEASE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[4]
+2021-01-12 15:19:31,157 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle RELEASE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[4]
+2021-01-12 15:19:31,157 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[10]:ClientInstanceID(1) Invoking lifecycle RELEASE_ENTITY on EntityID{className='org.terracotta.lease.LeaseAcquirer', entityName='SystemLeaseAcquirer'}:FetchID=[1]
+2021-01-12 15:19:31,158 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle RELEASE_ENTITY on EntityID{className='org.terracotta.lease.LeaseAcquirer', entityName='SystemLeaseAcquirer'}:FetchID=[1]
+2021-01-12 15:19:31,158 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[10]:ClientInstanceID(4) Invoking lifecycle RELEASE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:19:31,158 [WorkerThread(request_processor_stage, 3, 3)] INFO org.ehcache.clustered.server.ClusterTierManagerActiveEntity - Disconnecting ClientDescriptorImpl{nodeID=ClientID[10], entityDescriptor=ClientInstanceID(4)}
+2021-01-12 15:19:31,158 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle RELEASE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:19:41,865 [WorkerThread(client_handshake_stage, 0)] INFO com.tc.objectserver.handshakemanager.ServerClientHandshakeManager - Handling client handshake for ClientID[11]
+2021-01-12 15:19:41,866 [WorkerThread(client_handshake_stage, 0)] INFO com.tc.objectserver.handshakemanager.ServerClientHandshakeManager - confirming client handshake for STARTED 11 ClientID[11]
+2021-01-12 15:19:41,866 [WorkerThread(client_handshake_stage, 0)] INFO com.tc.objectserver.handshakemanager.ServerClientHandshakeManager - Sending handshake acknowledgement to ClientID[11]
+2021-01-12 15:19:41,891 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[11]:ClientInstanceID(1) Invoking lifecycle FETCH_ENTITY on EntityID{className='org.terracotta.lease.LeaseAcquirer', entityName='SystemLeaseAcquirer'}:FetchID=[1]
+2021-01-12 15:19:41,891 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle FETCH_ENTITY on EntityID{className='org.terracotta.lease.LeaseAcquirer', entityName='SystemLeaseAcquirer'}:FetchID=[1]
+2021-01-12 15:19:41,915 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[11]:ClientInstanceID(0) Invoking lifecycle CREATE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[4]
+2021-01-12 15:19:41,916 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle CREATE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[4]
+2021-01-12 15:19:41,939 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[11]:ClientInstanceID(2) Invoking lifecycle FETCH_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[4]
+2021-01-12 15:19:41,939 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle FETCH_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[4]
+2021-01-12 15:19:41,945 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[11]:ClientInstanceID(0) Invoking lifecycle CREATE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:19:41,945 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle CREATE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:19:41,949 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[11]:ClientInstanceID(2) Invoking lifecycle RELEASE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[4]
+2021-01-12 15:19:41,949 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle RELEASE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[4]
+2021-01-12 15:19:41,950 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[11]:ClientInstanceID(0) Invoking lifecycle DESTROY_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[4]
+2021-01-12 15:19:41,951 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle DESTROY_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[4]
+2021-01-12 15:19:41,952 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[11]:ClientInstanceID(0) Invoking lifecycle CREATE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[7]
+2021-01-12 15:19:41,952 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle CREATE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[7]
+2021-01-12 15:19:41,953 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[11]:ClientInstanceID(3) Invoking lifecycle FETCH_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[7]
+2021-01-12 15:19:41,953 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle FETCH_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[7]
+2021-01-12 15:19:41,968 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[11]:ClientInstanceID(4) Invoking lifecycle FETCH_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:19:41,968 [WorkerThread(request_processor_stage, 3, 3)] INFO org.ehcache.clustered.server.ClusterTierManagerActiveEntity - Connecting ClientDescriptorImpl{nodeID=ClientID[11], entityDescriptor=ClientInstanceID(4)}
+2021-01-12 15:19:41,968 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle FETCH_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:19:50,304 [L2_L1:TCWorkerComm # 0_R] INFO com.tc.net.core.TCConnection - error reading from channel java.nio.channels.SocketChannel[connected local=/192.168.1.11:9410 remote=/192.168.1.11:52526]: Connection reset by peer
+2021-01-12 15:19:50,304 [L2_L1:TCWorkerComm # 0_R] INFO com.tc.net.core.TCConnectionManager - error event on connection com.tc.net.core.TCConnectionImpl@2077108431: connected: true, closed: false local=192.168.1.11:9410 remote=192.168.1.11:52526 connect=[Tue Jan 12 15:19:41 CET 2021] idle=57ms [3525 read, 5830 write] buffer=com.tc.net.core.ClearTextBufferManager@fef34e8: Connection reset by peer
+2021-01-12 15:19:50,306 [L2_L1:TCWorkerComm # 0_R] INFO com.tc.objectserver.handler.ClientChannelLifeCycleHandler - : Received transport disconnect.  Shutting down client ClientID[11]
+2021-01-12 15:19:50,308 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[11]:ClientInstanceID(0) Invoking lifecycle DISCONNECT_CLIENT on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[7]
+2021-01-12 15:19:50,309 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[11]:ClientInstanceID(0) Invoking lifecycle DISCONNECT_CLIENT on EntityID{className='org.terracotta.lease.LeaseAcquirer', entityName='SystemLeaseAcquirer'}:FetchID=[1]
+2021-01-12 15:19:50,309 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[11]:ClientInstanceID(0) Invoking lifecycle DISCONNECT_CLIENT on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:19:50,309 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[11]:ClientInstanceID(3) Invoking lifecycle RELEASE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[7]
+2021-01-12 15:19:50,310 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle RELEASE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[7]
+2021-01-12 15:19:50,310 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[11]:ClientInstanceID(1) Invoking lifecycle RELEASE_ENTITY on EntityID{className='org.terracotta.lease.LeaseAcquirer', entityName='SystemLeaseAcquirer'}:FetchID=[1]
+2021-01-12 15:19:50,310 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle RELEASE_ENTITY on EntityID{className='org.terracotta.lease.LeaseAcquirer', entityName='SystemLeaseAcquirer'}:FetchID=[1]
+2021-01-12 15:19:50,310 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[11]:ClientInstanceID(4) Invoking lifecycle RELEASE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:19:50,310 [WorkerThread(request_processor_stage, 3, 3)] INFO org.ehcache.clustered.server.ClusterTierManagerActiveEntity - Disconnecting ClientDescriptorImpl{nodeID=ClientID[11], entityDescriptor=ClientInstanceID(4)}
+2021-01-12 15:19:50,310 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle RELEASE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:29:34,857 [WorkerThread(client_handshake_stage, 0)] INFO com.tc.objectserver.handshakemanager.ServerClientHandshakeManager - Handling client handshake for ClientID[12]
+2021-01-12 15:29:34,858 [WorkerThread(client_handshake_stage, 0)] INFO com.tc.objectserver.handshakemanager.ServerClientHandshakeManager - confirming client handshake for STARTED 12 ClientID[12]
+2021-01-12 15:29:34,858 [WorkerThread(client_handshake_stage, 0)] INFO com.tc.objectserver.handshakemanager.ServerClientHandshakeManager - Sending handshake acknowledgement to ClientID[12]
+2021-01-12 15:29:34,897 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[12]:ClientInstanceID(1) Invoking lifecycle FETCH_ENTITY on EntityID{className='org.terracotta.lease.LeaseAcquirer', entityName='SystemLeaseAcquirer'}:FetchID=[1]
+2021-01-12 15:29:34,897 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle FETCH_ENTITY on EntityID{className='org.terracotta.lease.LeaseAcquirer', entityName='SystemLeaseAcquirer'}:FetchID=[1]
+2021-01-12 15:29:34,925 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[12]:ClientInstanceID(0) Invoking lifecycle CREATE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[7]
+2021-01-12 15:29:34,925 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle CREATE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[7]
+2021-01-12 15:29:34,941 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[12]:ClientInstanceID(2) Invoking lifecycle FETCH_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[7]
+2021-01-12 15:29:34,941 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle FETCH_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[7]
+2021-01-12 15:29:34,948 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[12]:ClientInstanceID(0) Invoking lifecycle CREATE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:29:34,949 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle CREATE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:29:34,954 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[12]:ClientInstanceID(2) Invoking lifecycle RELEASE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[7]
+2021-01-12 15:29:34,954 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle RELEASE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[7]
+2021-01-12 15:29:34,956 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[12]:ClientInstanceID(0) Invoking lifecycle DESTROY_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[7]
+2021-01-12 15:29:34,956 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle DESTROY_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[7]
+2021-01-12 15:29:34,957 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[12]:ClientInstanceID(0) Invoking lifecycle CREATE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[10]
+2021-01-12 15:29:34,958 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle CREATE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[10]
+2021-01-12 15:29:34,959 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[12]:ClientInstanceID(3) Invoking lifecycle FETCH_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[10]
+2021-01-12 15:29:34,959 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle FETCH_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[10]
+2021-01-12 15:29:34,976 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[12]:ClientInstanceID(4) Invoking lifecycle FETCH_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:29:34,977 [WorkerThread(request_processor_stage, 3, 3)] INFO org.ehcache.clustered.server.ClusterTierManagerActiveEntity - Connecting ClientDescriptorImpl{nodeID=ClientID[12], entityDescriptor=ClientInstanceID(4)}
+2021-01-12 15:29:34,977 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle FETCH_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:29:35,490 [L2_L1:TCWorkerComm # 0_R] INFO com.tc.objectserver.handler.ClientChannelLifeCycleHandler - : Received transport disconnect.  Shutting down client ClientID[12]
+2021-01-12 15:29:35,492 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[12]:ClientInstanceID(0) Invoking lifecycle DISCONNECT_CLIENT on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:29:35,492 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[12]:ClientInstanceID(0) Invoking lifecycle DISCONNECT_CLIENT on EntityID{className='org.terracotta.lease.LeaseAcquirer', entityName='SystemLeaseAcquirer'}:FetchID=[1]
+2021-01-12 15:29:35,492 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[12]:ClientInstanceID(0) Invoking lifecycle DISCONNECT_CLIENT on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[10]
+2021-01-12 15:29:35,493 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[12]:ClientInstanceID(4) Invoking lifecycle RELEASE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:29:35,493 [WorkerThread(request_processor_stage, 3, 3)] INFO org.ehcache.clustered.server.ClusterTierManagerActiveEntity - Disconnecting ClientDescriptorImpl{nodeID=ClientID[12], entityDescriptor=ClientInstanceID(4)}
+2021-01-12 15:29:35,493 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle RELEASE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.ClusterTierManagerClientEntity', entityName='limber'}:FetchID=[3]
+2021-01-12 15:29:35,493 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[12]:ClientInstanceID(1) Invoking lifecycle RELEASE_ENTITY on EntityID{className='org.terracotta.lease.LeaseAcquirer', entityName='SystemLeaseAcquirer'}:FetchID=[1]
+2021-01-12 15:29:35,493 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle RELEASE_ENTITY on EntityID{className='org.terracotta.lease.LeaseAcquirer', entityName='SystemLeaseAcquirer'}:FetchID=[1]
+2021-01-12 15:29:35,493 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.entity.ManagedEntityImpl - Client:ClientID[12]:ClientInstanceID(3) Invoking lifecycle RELEASE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[10]
+2021-01-12 15:29:35,493 [WorkerThread(request_processor_stage, 3, 3)] INFO com.tc.objectserver.impl.DistributedObjectServer - completed lifecycle RELEASE_ENTITY on EntityID{className='org.ehcache.clustered.client.internal.lock.VoltronReadWriteLockClient', entityName='VoltronReadWriteLock-ClusterTierManagerClientEntityFactory-AccessLock-limber'}:FetchID=[10]
+2021-01-12 15:34:37,365 [CommonShutDownHook] INFO com.tc.objectserver.impl.DistributedObjectServer - L2 Exiting...

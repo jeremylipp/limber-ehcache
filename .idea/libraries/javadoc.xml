@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="javadoc">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/client/ehcache/javadoc/ehcache-clustered-3.8.1-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/client/ehcache/javadoc/ehcache-3.8.1-javadoc.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
