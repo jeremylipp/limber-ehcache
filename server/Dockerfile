@@ -41,5 +41,3 @@ ENV OFFHEAP_RESOURCE2_SIZE "128"
 
 # before starting the terracotta server, we update the tc-config.xml configuration file
 ENTRYPOINT /terracotta/entrypoint.sh
-
-CMD gunicorn --bind 0.0.0.0:$PORT wsgi
