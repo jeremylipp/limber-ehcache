@@ -2,4 +2,4 @@ build:
   docker:
     web: server/Dockerfile
 run:
-  web: docker run --name tc-server -p 9410:9410  -d terracotta/terracotta-server-oss:5.6.4
+  web: docker run --name tc-server -p 9410:$PORT  -d terracotta/terracotta-server-oss:5.6.4
